@@ -1,4 +1,4 @@
-﻿package com.member.dao;
+package com.member.dao;
 
 import com.member.util.Configuration;
 
@@ -23,7 +23,7 @@ public class BaseDao {
      * @return
      */
     public Connection getConn() {
-     /*   String driver = Configuration.getConfig().getkey("driver");
+        String driver = Configuration.getConfig().getkey("driver");
         String url = Configuration.getConfig().getkey("url");
         String user = Configuration.getConfig().getkey("username");
         String password = Configuration.getConfig().getkey("password");
@@ -38,8 +38,8 @@ public class BaseDao {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return conn;*/
-        Context initcontext;
+        return conn;
+      /*  Context initcontext;
         try {
             initcontext = new InitialContext();
             Context context = (Context) initcontext.lookup("java:comp/env");
@@ -50,7 +50,7 @@ public class BaseDao {
         } catch (SQLException e) {
             e.printStackTrace();
         }
-        return conn;
+        return conn;*/
     }
 
     /**
