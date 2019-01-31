@@ -11,6 +11,7 @@
     <title>$Title$</title>
   </head>
   <body>
-  $END$
+  <%--<a href="<%=request.getContextPath()%>/member.do?name=findAll">欢迎</a>--%>
+  <%response.sendRedirect(request.getContextPath()+"/member.do?names=findAll");%>
   </body>
 </html>

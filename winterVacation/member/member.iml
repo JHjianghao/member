@@ -32,15 +32,6 @@
     <orderEntry type="module-library" exported="">
       <library>
         <CLASSES>
-          <root url="jar://D:/maven/target/dependency/taglibs-standard-impl-1.2.5.jar!/" />
-        </CLASSES>
-        <JAVADOC />
-        <SOURCES />
-      </library>
-    </orderEntry>
-    <orderEntry type="module-library">
-      <library>
-        <CLASSES>
           <root url="jar://D:/maven/target/dependency/javax.el-api-3.0.1-b06.jar!/" />
         </CLASSES>
         <JAVADOC />
@@ -51,6 +42,24 @@
       <library>
         <CLASSES>
           <root url="jar://D:/maven/target/dependency/javax.servlet.jsp.jstl-api-1.2.2.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://D:/maven/target/dependency/taglibs-standard-impl-1.2.5.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library" exported="">
+      <library>
+        <CLASSES>
+          <root url="jar://D:/maven/target/dependency/servlet-api-2.3.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

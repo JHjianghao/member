@@ -32,9 +32,9 @@ public class GoodsDaoImpl extends BaseDao implements GoodsDao {
     }
 
     @Override
-    public Goods findById(long id) {
-        String sql = "select * from goods where id=?";
-        Object[] objects = {id};
+    public Goods findById(String name) {
+        String sql = "select * from goods where name=?";
+        Object[] objects = {name};
         Goods goods = null;
         ResultSet resultSet = this.executeQuery(sql, objects);
         try {

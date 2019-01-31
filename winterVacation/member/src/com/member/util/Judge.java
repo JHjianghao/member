@@ -7,21 +7,24 @@ import com.member.pojo.Members;
 import com.member.service.MembersService;
 import com.member.service.MemdersServiceImpl;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
 public class Judge {
-    public static Map<Long,String> judges(){
+    public static Map<Long, String> judges() {
         MembersService membersService = new MemdersServiceImpl();
         GoodsDao goods = new GoodsDaoImpl();
         Map<Long, String> map = new HashMap<>();
-        List<Goods> goodsList=goods.findAll();
-        List<Members> membersList=membersService.findAll();
-        for (Goods goodsLists:goodsList){
-            for (Members membersLists:membersList){
-                if (membersLists.getGoodsId()==goodsLists.getId()){
-                    map.put(membersLists.getGoodsId(),goodsLists.getName());
+        List<Goods> goodsList = new ArrayList<>();
+        goodsList = goods.findAll();
+        List<Members> membersList = new ArrayList<>();
+        membersList = membersService.findAlls();
+        for (Goods goodsLists : goodsList) {
+            for (Members membersLists : membersList) {
+                if (membersLists.getGoodsId() == goodsLists.getId()) {
+                    map.put(membersLists.getGoodsId(), goodsLists.getName());
                 }
             }
         }

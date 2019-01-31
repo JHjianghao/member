@@ -10,7 +10,8 @@ public interface MembersDao {
      * 查询全部
      * @return
      */
-    List<Members> findAll();
+    List<Members> findAll(int index);
+    List<Members> findAlls();
 
     /**
      * 查询单条
@@ -21,10 +22,10 @@ public interface MembersDao {
 
     /**
      * 添加
-     * @param members
+     * @param
      * @return
      */
-    int addMembers(Members members);
+    int addMembers(Long MemberNumber, String NickName, Long goodsId);
 
     /**
      * 修改
@@ -45,4 +46,7 @@ public interface MembersDao {
      * @return
      */
     Goods listGoods(long goodsId);
+
+    int count();
+
 }

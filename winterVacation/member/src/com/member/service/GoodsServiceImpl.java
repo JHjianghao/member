@@ -15,8 +15,8 @@ public class GoodsServiceImpl implements GoodsService {
     }
 
     @Override
-    public Goods findById(long id) {
-        return goodsDao.findById(id);
+    public Goods findById(String name) {
+        return goodsDao.findById(name);
     }
 
     @Override

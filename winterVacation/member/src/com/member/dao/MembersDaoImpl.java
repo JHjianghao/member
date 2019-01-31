@@ -15,7 +15,28 @@ public class MembersDaoImpl extends BaseDao implements MembersDao {
      * @return
      */
     @Override
-    public List<Members> findAll() {
+    public List<Members> findAll(int index) {
+        String sql = "select * from members limit ?,3";
+        Object [] objects = {index};
+        ResultSet resultSet = this.executeQuery(sql, objects);
+        Members members = null;
+        List<Members> list = new ArrayList<>();
+        try {
+            while (resultSet.next()) {
+                members = new Members();
+                members.setId(resultSet.getLong(1));
+                members.setMemberNumber(resultSet.getLong(2));
+                members.setNickName(resultSet.getString(3));
+                members.setCreateTime(resultSet.getDate(4));
+                members.setGoodsId(resultSet.getInt(5));
+                list.add(members);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return list;
+    }
+    public List<Members> findAlls() {
         String sql = "select * from members";
         ResultSet resultSet = this.executeQuery(sql, null);
         Members members = null;
@@ -44,9 +65,8 @@ public class MembersDaoImpl extends BaseDao implements MembersDao {
      */
     @Override
     public List<Members> findById(long MemberNumber) {
-        String sql = "select *  members where id = ?";
-        Object[] objects = {MemberNumber};
-        ResultSet resultSet = this.executeQuery(sql, objects);
+        String sql = "select * from members where MemberNumber like '%"+MemberNumber+"%'";
+        ResultSet resultSet = this.executeQuery(sql, null);
         Members members = null;
         List<Members> list = new ArrayList<>();
         try {
@@ -68,14 +88,14 @@ public class MembersDaoImpl extends BaseDao implements MembersDao {
     /**
      * 添加
      *
-     * @param members
+     * @param
      * @return
      */
     @Override
-    public int addMembers(Members members) {
+    public int addMembers(Long MemberNumber, String NickName , Long goodsId) {
         int receive = 0;
-        String sql = "INSERT into members VALUES(null,?,?,?,?);";
-        Object[] objects = {members.getMemberNumber(), members.getNickName(), members.getCreateTime(), members.getGoodsId()};
+        String sql = "INSERT into members VALUES(default,?,?,default,?);";
+        Object[] objects = {MemberNumber, NickName,goodsId};
         receive = this.executeUpdate(sql, objects);
         return receive;
     }
@@ -131,5 +151,20 @@ public class MembersDaoImpl extends BaseDao implements MembersDao {
             e.printStackTrace();
         }
         return goods;
+    }
+
+    @Override
+    public int count() {
+        int count= 0;
+        String sql = "select count(1) from members";
+        ResultSet resultSet = executeQuery(sql,null);
+        try {
+            while (resultSet.next()){
+                count = resultSet.getInt(1);
+            }
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+        return count;
     }
 }

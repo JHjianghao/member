@@ -27,7 +27,6 @@ public class BaseDao {
         String url = Configuration.getConfig().getkey("url");
         String user = Configuration.getConfig().getkey("username");
         String password = Configuration.getConfig().getkey("password");
-        ;
         try {
             // 1、加载驱动
             Class.forName(driver);

@@ -13,10 +13,10 @@ public interface GoodsDao {
 
     /**
      * 查询单条
-     * @param id
+     * @param name
      * @return
      */
-    Goods findById(long id);
+    Goods findById(String name);
 
     /**
      * 添加
