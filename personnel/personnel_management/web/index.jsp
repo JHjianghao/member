@@ -8,9 +8,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
   <head>
-    <title>$Title$</title>
+    <title>转跳</title>
   </head>
   <body>
-  $END$
+  <%response.sendRedirect(request.getContextPath()+"/EnterpriseTalentServlet.do?transfer=findAll");%>
   </body>
 </html>
