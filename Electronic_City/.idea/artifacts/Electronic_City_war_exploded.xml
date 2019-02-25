@@ -1,0 +1,22 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="Electronic_City:war exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/Electronic_City_war_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="Electronic_City/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="Electronic_City" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="lib1" />
+          <element id="file-copy" path="$MAVEN_REPOSITORY$/javax.el-api-3.0.1-b06.jar" />
+          <element id="file-copy" path="$MAVEN_REPOSITORY$/javax.servlet.jsp.jstl-api-1.2.2.jar" />
+          <element id="file-copy" path="$MAVEN_REPOSITORY$/taglibs-standard-impl-1.2.5.jar" />
+          <element id="file-copy" path="$MAVEN_REPOSITORY$/protobuf-java-3.6.1.jar" />
+          <element id="file-copy" path="D:/maven/commons-fileupload-1.4-bin/commons-fileupload-1.4-bin/commons-fileupload-1.4-tests.jar" />
+          <element id="file-copy" path="D:/maven/commons-fileupload-1.4-bin/commons-fileupload-1.4-bin/commons-fileupload-1.4.jar" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
